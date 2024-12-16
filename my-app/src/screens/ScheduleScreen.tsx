@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 export default function ScheduleScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Здесь будет расписание матчей.</Text>
+      <Text style={styles.text}>Расписание :D</Text>
     </View>
   );
 }
