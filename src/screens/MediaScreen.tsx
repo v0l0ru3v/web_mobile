@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, FlatList, Image, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, StyleSheet, FlatList, Image, TouchableOpacity, Alert, SafeAreaView } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 
 export default function MediaFeed() {
@@ -42,7 +42,9 @@ export default function MediaFeed() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Лента фотографий</Text>
+      <SafeAreaView style={styles.container}>
+        <Text style={styles.title}>Лента фотографий</Text>
+      </SafeAreaView>
       
       {/* Лента с фотографиями */}
       <FlatList
@@ -73,6 +75,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
+    marginTop: 30
   },
   feed: {
     flexDirection: 'row',

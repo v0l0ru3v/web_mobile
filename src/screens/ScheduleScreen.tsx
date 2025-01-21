@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, FlatList, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, FlatList, ActivityIndicator, SafeAreaView } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Ссылка на API
@@ -73,7 +73,7 @@ export default function ScheduleScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Расписание матчей</Text>
       <FlatList
         data={matches}                      // Данные, которые пришли с API или из AsyncStorage
@@ -91,13 +91,13 @@ export default function ScheduleScreen() {
           </View>
         )}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20, backgroundColor: '#f4f4f4' },
-  title: { fontSize: 24, fontWeight: 'bold', marginBottom: 20, color: '#333' },
+  title: { fontSize: 24, fontWeight: 'bold', marginBottom: 20, color: '#333', marginTop: 30 },
   matchItem: {
     width: '100%',
     padding: 15,
